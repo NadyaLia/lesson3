@@ -1,5 +1,6 @@
 package de.telran.g240123mbelesson331082023.service;
 
+import de.telran.g240123mbelesson331082023.domain.entity.Cart;
 import de.telran.g240123mbelesson331082023.domain.entity.CommonCart;
 import de.telran.g240123mbelesson331082023.domain.entity.Customer;
 import de.telran.g240123mbelesson331082023.domain.entity.Product;
@@ -11,69 +12,64 @@ import java.util.List;
 public class CommonCustomerService implements CustomerService {
     @Autowired
     private CustomerRepository repository;
+
     @Autowired
     private ProductService productService;
 
     @Override
     public List<Customer> getAll() {
-        return repository.getAllCustomers();
+        return repository.getAll();
     }
 
     @Override
     public Customer getById(int id) {
-        return repository.findCustomerById(id);
+        return repository.getById(id);
     }
 
     @Override
     public void add(Customer customer) {
-        repository.addCustomer(customer.getName());
+        repository.add(customer.getName());
     }
 
     @Override
     public void deleteById(int id) {
-        repository.deleteCustomerById(id);
+        repository.delete(id);
     }
+
     @Override
     public void deleteByName(String name) {
-        int idToDelete = repository.getAllCustomers().stream().filter(x -> x.getName().equals(name)).findFirst().get().
-                getId();
-        repository.deleteCustomerById(idToDelete);
+        int idToDelete = repository.getAll().stream().filter(x -> x.getName().equals(name)).findFirst().get().getId();
+        repository.delete(idToDelete);
     }
 
     @Override
     public int getCount() {
-        return repository.getAllCustomers().size();
+        return repository.getAll().size();
     }
 
     @Override
     public double getTotalPriceById(int id) {
-        return repository.findCustomerById(id).getCart().getTotalCost();
+        return repository.getById(id).getCart().getTotalCost();
     }
 
     @Override
     public double getAveragePriceById(int id) {
-        CommonCart cart = (CommonCart) repository.findCustomerById(id).getCart();
-        if (cart.getProducts().size() == 0) {
-            return 0;
-        }
+        Cart cart = repository.getById(id).getCart();
         return cart.getTotalCost() / cart.getProducts().size();
     }
 
     @Override
     public void addToCartById(int customerId, int productId) {
-        Customer customer = repository.findCustomerById(customerId);
-        Product product = productService.getById(productId);
-        customer.getCart().addProduct(product);
+        repository.addToCartById(customerId, productId);
     }
+
     @Override
     public void deleteFromCart(int customerId, int productId) {
-        Customer customer = repository.findCustomerById(customerId);
-        customer.getCart().getProducts().removeIf(x -> x.getId() == productId);
+        repository.deleteFromCart(customerId, productId);
     }
 
     @Override
     public void clearCart(int customerId) {
-        Customer customer = repository.findCustomerById(customerId);
-        customer.getCart().getProducts().clear();
+        repository.clearCart(customerId);
     }
 }

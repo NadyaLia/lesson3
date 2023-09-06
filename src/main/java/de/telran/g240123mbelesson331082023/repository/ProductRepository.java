@@ -9,7 +9,7 @@ public interface ProductRepository {
 
         List<Product> getAll();
 
-        CommonProduct getById(int id);
+        Product getById(int id);
 
         void add(String name, double price);
 

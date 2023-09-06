@@ -16,7 +16,7 @@ public class CommonProductService implements ProductService {
     }
 
     @Override
-    public CommonProduct getById(int id) {
+    public Product getById(int id) {
         return repository.getById(id);
     }
 

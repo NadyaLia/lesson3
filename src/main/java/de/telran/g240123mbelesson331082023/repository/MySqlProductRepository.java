@@ -1,0 +1,76 @@
+package de.telran.g240123mbelesson331082023.repository;
+
+import de.telran.g240123mbelesson331082023.domain.entity.CommonProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.Product;
+import static de.telran.g240123mbelesson331082023.domain.database.MySqlConnector.getConnection;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+public class MySqlProductRepository implements ProductRepository {
+
+    @Override
+    public List<Product> getAll() {
+        try (Connection connection = getConnection()){
+            String query = "select * from product;";
+            ResultSet resultSet = connection.createStatement().executeQuery(query);
+
+            List<Product> result = new ArrayList<>();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                double price = resultSet.getDouble(3);
+                result.add(new CommonProduct(id, name, price));
+            }
+            return result;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Product getById(int id) {
+        try (Connection connection = getConnection()) {
+            String query = String.format("select * from product where id = %d;", id);
+            ResultSet resultSet = connection.createStatement().executeQuery(query);
+
+            resultSet.next();
+            String name = resultSet.getString(2);
+            double price = resultSet.getDouble(3);
+            return new CommonProduct(id, name, price);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void add(String name, double price) {
+        try (Connection connection = getConnection()) {
+            String query = String.format(Locale.US,"INSERT INTO `product` (`name`, `price`) " +
+                    "VALUES ('%s', '%.2f');", name, price);
+
+            connection.createStatement().execute(query);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        try (Connection connection = getConnection()) {
+            String query = String.format("DELETE FROM `product` WHERE (`id` = '%d');", id);
+
+            connection.createStatement().execute(query);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
