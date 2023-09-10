@@ -1,8 +1,7 @@
 package de.telran.g240123mbelesson331082023.controllers;
 
-import de.telran.g240123mbelesson331082023.domain.entity.CommonProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.common.CommonProduct;
 import de.telran.g240123mbelesson331082023.domain.entity.Product;
-import de.telran.g240123mbelesson331082023.service.CustomerService;
 import de.telran.g240123mbelesson331082023.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

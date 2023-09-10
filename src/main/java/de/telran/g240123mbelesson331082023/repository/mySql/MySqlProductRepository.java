@@ -1,7 +1,9 @@
-package de.telran.g240123mbelesson331082023.repository;
+package de.telran.g240123mbelesson331082023.repository.mySql;
 
-import de.telran.g240123mbelesson331082023.domain.entity.CommonProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.common.CommonProduct;
 import de.telran.g240123mbelesson331082023.domain.entity.Product;
+import de.telran.g240123mbelesson331082023.repository.ProductRepository;
+
 import static de.telran.g240123mbelesson331082023.domain.database.MySqlConnector.getConnection;
 
 import java.sql.Connection;

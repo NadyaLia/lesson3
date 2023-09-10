@@ -1,4 +1,7 @@
-package de.telran.g240123mbelesson331082023.domain.entity;
+package de.telran.g240123mbelesson331082023.domain.entity.common;
+
+import de.telran.g240123mbelesson331082023.domain.entity.Cart;
+import de.telran.g240123mbelesson331082023.domain.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;

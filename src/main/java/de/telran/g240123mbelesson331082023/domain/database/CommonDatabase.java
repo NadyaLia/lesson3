@@ -1,6 +1,8 @@
 package de.telran.g240123mbelesson331082023.domain.database;
 
-import de.telran.g240123mbelesson331082023.domain.entity.*;
+import de.telran.g240123mbelesson331082023.domain.entity.Customer;
+import de.telran.g240123mbelesson331082023.domain.entity.Product;
+import de.telran.g240123mbelesson331082023.domain.entity.common.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

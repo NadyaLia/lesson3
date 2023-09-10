@@ -1,10 +1,10 @@
-package de.telran.g240123mbelesson331082023.service;
+package de.telran.g240123mbelesson331082023.service.common;
 
 import de.telran.g240123mbelesson331082023.domain.entity.Cart;
-import de.telran.g240123mbelesson331082023.domain.entity.CommonCart;
 import de.telran.g240123mbelesson331082023.domain.entity.Customer;
-import de.telran.g240123mbelesson331082023.domain.entity.Product;
 import de.telran.g240123mbelesson331082023.repository.CustomerRepository;
+import de.telran.g240123mbelesson331082023.service.CustomerService;
+import de.telran.g240123mbelesson331082023.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

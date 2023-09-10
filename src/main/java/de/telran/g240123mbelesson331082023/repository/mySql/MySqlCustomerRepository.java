@@ -1,6 +1,10 @@
-package de.telran.g240123mbelesson331082023.repository;
+package de.telran.g240123mbelesson331082023.repository.mySql;
 
-import de.telran.g240123mbelesson331082023.domain.entity.*;
+import de.telran.g240123mbelesson331082023.domain.entity.common.CommonCart;
+import de.telran.g240123mbelesson331082023.domain.entity.common.CommonCustomer;
+import de.telran.g240123mbelesson331082023.domain.entity.common.CommonProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.Customer;
+import de.telran.g240123mbelesson331082023.repository.CustomerRepository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
