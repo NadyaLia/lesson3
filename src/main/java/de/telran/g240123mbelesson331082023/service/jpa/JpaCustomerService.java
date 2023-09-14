@@ -9,6 +9,7 @@ import de.telran.g240123mbelesson331082023.repository.jpa.JpaCartRepository;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaCustomerRepository;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaProductRepository;
 import de.telran.g240123mbelesson331082023.service.CustomerService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,10 @@ public class JpaCustomerService implements CustomerService {
 
     @Override
     public void add(Customer customer) {
-        JpaCustomer jpaCustomer = repository.save(new JpaCustomer(0, customer.getName(), null));
+
+        JpaCustomer newCustomer = new JpaCustomer(0, customer.getName(), customer.getAge(), customer.getEmail(), null);
+        JpaCustomer jpaCustomer = repository.save(newCustomer);
+
         int customerId = jpaCustomer.getId();
 
         JpaCart jpaCart = new JpaCart(jpaCustomer);
@@ -62,7 +66,7 @@ public class JpaCustomerService implements CustomerService {
 
     @Override
     public double getTotalPriceById(int id) {
-        return repository.findById(id).orElse(null).getCart().getTotalCost();
+        return getById(id).getCart().getTotalCost();
     }
 
     @Override
@@ -70,6 +74,7 @@ public class JpaCustomerService implements CustomerService {
         return repository.getAveragePriceById(id);
     }
 
+    @Transactional
     @Override
     public void addToCartById(int customerId, int productId) {
         JpaCustomer customer = repository.findById(customerId).orElseThrow(() -> new NoSuchElementException("Customer " +
@@ -84,6 +89,7 @@ public class JpaCustomerService implements CustomerService {
         cartRepository.save(jpaCart);
     }
 
+    @Transactional
     @Override
     public void deleteFromCart(int customerId, int productId) {
         repository.deleteFromCart(customerId, productId);

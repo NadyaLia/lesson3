@@ -3,7 +3,11 @@ package de.telran.g240123mbelesson331082023.controllers;
 import de.telran.g240123mbelesson331082023.domain.entity.common.CommonCustomer;
 import de.telran.g240123mbelesson331082023.domain.entity.Customer;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaCustomer;
+import de.telran.g240123mbelesson331082023.exception_layer.exceptions.CartIsEmptyException;
+import de.telran.g240123mbelesson331082023.exception_layer.exceptions.CustomerNotFoundException;
+import de.telran.g240123mbelesson331082023.exception_layer.exceptions.EntityValidationException;
 import de.telran.g240123mbelesson331082023.service.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
-public class CustomerController {
+public class CustomerController implements Controller {
     @Autowired
     private CustomerService customerService;
 
@@ -22,12 +26,21 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public Customer getById(@PathVariable int id) {
-        return customerService.getById(id);
+        Customer customer = customerService.getById(id);
+        if (customer == null) {
+            throw new CustomerNotFoundException("Customer not found");
+        }
+        return customer;
     }
 
     @PostMapping
-    public void add(@RequestBody CommonCustomer customer) {
-        customerService.add(customer);
+    public Customer add(@Valid @RequestBody CommonCustomer customer) {
+        try {
+            customerService.add(customer);
+            return customer;
+        } catch (Exception e) {
+            throw new EntityValidationException(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
@@ -47,12 +60,17 @@ public class CustomerController {
 
     @GetMapping("/totalPrice/{id}")
     public double getTotalPriceById(@PathVariable int id) {
-        return customerService.getTotalPriceById(id);
+        double totalPrice = customerService.getTotalPriceById(id);
+        if (totalPrice == 0) {
+            throw new CartIsEmptyException("The cart is empty. Cannot get total price.");
+        }
+        return totalPrice;
     }
 
     @GetMapping("/avgPrice/{id}")
     public double getAveragePriceById(@PathVariable int id) {
-        return customerService.getAveragePriceById(id);
+        double averagePrice = customerService.getAveragePriceById(id);
+        return averagePrice;
     }
 
     @PostMapping("/cart/add/{customerId}/{productId}")

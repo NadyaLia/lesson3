@@ -35,11 +35,13 @@ public class MySqlCustomerRepository implements CustomerRepository {
                 int productId = resultSet.getInt("p.id");
                 String productName = resultSet.getString("p.name");
                 double productPrice = resultSet.getDouble("p.price");
+                int customerAge = resultSet.getInt("c.age");
+                String customerEmail = resultSet.getString("c.email");
 
                 Customer customer = customerMap.get(customerId);
 
                 if(customer == null) {
-                    customer = new CommonCustomer(customerId, customerName,
+                    customer = new CommonCustomer(customerId, customerName, customerAge, customerEmail,
                             new CommonCart());
 
                     customerMap.put(customerId, customer);
