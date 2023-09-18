@@ -10,6 +10,8 @@ import de.telran.g240123mbelesson331082023.repository.jpa.JpaCustomerRepository;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaProductRepository;
 import de.telran.g240123mbelesson331082023.service.CustomerService;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,8 @@ import java.util.NoSuchElementException;
 
 @Service
 public class JpaCustomerService implements CustomerService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(JpaCustomerService.class);
+
     @Autowired
     private JpaCustomerRepository repository;
     @Autowired
@@ -33,6 +37,10 @@ public class JpaCustomerService implements CustomerService {
 
     @Override
     public Customer getById(int id) {
+        LOGGER.info(String.format("INFO This is the customer with ID %d", id));
+        LOGGER.warn(String.format("WARN This is the customer with ID %d", id));
+        LOGGER.error(String.format("ERROR This is the customer with ID %d", id));
+
         return repository.findById(id).orElse(null);
     }
 

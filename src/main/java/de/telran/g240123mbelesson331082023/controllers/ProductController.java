@@ -2,9 +2,11 @@ package de.telran.g240123mbelesson331082023.controllers;
 
 import de.telran.g240123mbelesson331082023.domain.entity.common.CommonProduct;
 import de.telran.g240123mbelesson331082023.domain.entity.Product;
+import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaProduct;
 import de.telran.g240123mbelesson331082023.exception_layer.Response;
 import de.telran.g240123mbelesson331082023.exception_layer.exceptions.*;
 import de.telran.g240123mbelesson331082023.service.ProductService;
+import de.telran.g240123mbelesson331082023.service.jpa.JpaProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +21,7 @@ public class ProductController implements Controller {
 
     @GetMapping
     public List<Product> getAll() {
+        ((JpaProductService) productService).test(new JpaProduct(0, "Test Name", 100));
         List<Product> products = productService.getAll();
         if (products.size() == 8) {
             throw new ThirdTestException("Products list is empty!");
