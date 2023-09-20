@@ -3,7 +3,10 @@ package de.telran.g240123mbelesson331082023.service.jpa;
 import de.telran.g240123mbelesson331082023.domain.entity.Product;
 import de.telran.g240123mbelesson331082023.domain.entity.common.CommonProduct;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.jpa.Task;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaProductRepository;
+import de.telran.g240123mbelesson331082023.repository.jpa.JpaTaskRepository;
+import de.telran.g240123mbelesson331082023.schedule_layer.ScheduleExecutor;
 import de.telran.g240123mbelesson331082023.service.ProductService;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -20,8 +23,15 @@ public class JpaProductService implements ProductService {
     @Autowired
     private JpaProductRepository repository;
 
+    @Autowired
+    private JpaTaskRepository taskRepository;
+
     @Override
     public List<Product> getAll() {
+        // Task task = new Task("Task scheduled after getting all products");
+        Task task = new Task("Task scheduled for single execution after getting all products");
+        taskRepository.save(task);
+        ScheduleExecutor.taskSchedulerTaskWithInstant(task);
         return new ArrayList<>(repository.findAll());
     }
 

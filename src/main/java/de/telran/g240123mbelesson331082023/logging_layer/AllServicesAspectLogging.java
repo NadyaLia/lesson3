@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 public class AllServicesAspectLogging {
     private static final Logger logger = LoggerFactory.getLogger(AllServicesAspectLogging.class);
 
-    @Pointcut("execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)) || " +
-            "execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaCustomerService.*(..))")
+    @Pointcut("execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaCustomerService.*(..)) || " +
+            "execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..))")
     public void serviceMethods() {}
 
     @Before("serviceMethods()")

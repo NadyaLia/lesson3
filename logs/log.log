@@ -1,589 +1,92 @@
-2023-09-18T11:16:23.168+02:00  INFO 21620 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 21620 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:16:23.180+02:00  INFO 21620 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:16:24.376+02:00  INFO 21620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:16:24.458+02:00  INFO 21620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:16:24.944+02:00  WARN 21620 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-2023-09-18T11:16:24.957+02:00  INFO 21620 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-18T11:16:24.984+02:00 ERROR 21620 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:273) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:592) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at de.telran.g240123mbelesson331082023.G240123MBeLesson331082023Application.main(G240123MBeLesson331082023Application.java:10) ~[classes/:na]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:605) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:417) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:280) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1102) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:509) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 14 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.InternalUseOnlyPointcutParser.resolvePointcutExpression(InternalUseOnlyPointcutParser.java:36) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.getDeclaredPointcuts(Java15ReflectionBasedReferenceTypeDelegate.java:307) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.ReferenceType.getDeclaredPointcuts(ReferenceType.java:890) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:261) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:258) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4$1.hasNext(Iterators.java:213) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4.hasNext(Iterators.java:230) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:767) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.patterns.ReferencePointcut.resolveBindings(ReferencePointcut.java:148) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:189) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:331) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.20.jar:na]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:222) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:193) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:172) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:288) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:320) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:366) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:318) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:434) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 36 common frames omitted
-
-2023-09-18T11:18:16.094+02:00  INFO 2200 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 2200 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:18:16.097+02:00  INFO 2200 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:18:16.964+02:00  INFO 2200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:18:17.053+02:00  INFO 2200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:18:18.024+02:00  INFO 2200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T11:18:18.036+02:00  INFO 2200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T11:18:18.036+02:00  INFO 2200 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T11:18:18.142+02:00  INFO 2200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T11:18:18.142+02:00  INFO 2200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1954 ms
-2023-09-18T11:18:18.395+02:00  INFO 2200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T11:18:18.498+02:00  INFO 2200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T11:18:18.502+02:00  INFO 2200 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T11:18:18.703+02:00  INFO 2200 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:18:18.890+02:00  INFO 2200 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T11:18:18.910+02:00  INFO 2200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T11:18:19.373+02:00  INFO 2200 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@628ba266
-2023-09-18T11:18:19.375+02:00  INFO 2200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T11:18:19.843+02:00  INFO 2200 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:18:20.477+02:00  WARN 2200 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:18:20.486+02:00  WARN 2200 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T11:18:20.492+02:00  WARN 2200 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T11:18:20.661+02:00  INFO 2200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T11:18:20.664+02:00  INFO 2200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:18:20.996+02:00  INFO 2200 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T11:18:21.312+02:00  WARN 2200 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T11:18:21.729+02:00  INFO 2200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T11:18:21.739+02:00  INFO 2200 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 6.289 seconds (process running for 6.753)
-2023-09-18T11:18:38.447+02:00  INFO 2200 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:18:38.448+02:00  INFO 2200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T11:18:38.454+02:00  INFO 2200 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-18T11:19:50.374+02:00  INFO 23184 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 23184 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:19:50.379+02:00  INFO 23184 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:19:51.349+02:00  INFO 23184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:19:51.448+02:00  INFO 23184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:19:51.882+02:00  WARN 23184 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-2023-09-18T11:19:51.892+02:00  INFO 23184 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-18T11:19:51.914+02:00 ERROR 23184 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:273) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:592) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at de.telran.g240123mbelesson331082023.G240123MBeLesson331082023Application.main(G240123MBeLesson331082023Application.java:10) ~[classes/:na]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:605) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:417) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:280) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1102) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:509) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 14 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.InternalUseOnlyPointcutParser.resolvePointcutExpression(InternalUseOnlyPointcutParser.java:36) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.getDeclaredPointcuts(Java15ReflectionBasedReferenceTypeDelegate.java:307) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.ReferenceType.getDeclaredPointcuts(ReferenceType.java:890) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:261) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:258) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4$1.hasNext(Iterators.java:213) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4.hasNext(Iterators.java:230) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:767) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.patterns.ReferencePointcut.resolveBindings(ReferencePointcut.java:148) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:189) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:331) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.20.jar:na]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:222) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:193) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:172) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:288) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:320) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:366) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:318) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:434) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 36 common frames omitted
-
-2023-09-18T11:22:28.070+02:00  INFO 18260 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 18260 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:22:28.073+02:00  INFO 18260 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:22:28.977+02:00  INFO 18260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:22:29.063+02:00  INFO 18260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:22:29.471+02:00  WARN 18260 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-2023-09-18T11:22:29.485+02:00  INFO 18260 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-18T11:22:29.511+02:00 ERROR 18260 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:273) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:788) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:592) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at de.telran.g240123mbelesson331082023.G240123MBeLesson331082023Application.main(G240123MBeLesson331082023Application.java:10) ~[classes/:na]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:605) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:417) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:280) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1102) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:509) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 14 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expecting ')' at character position 0
-execution(* de.telran.g240123mbelesson331082023.service.jpa.JpaProductService.*(..)
-^
-
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:334) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.InternalUseOnlyPointcutParser.resolvePointcutExpression(InternalUseOnlyPointcutParser.java:36) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.getDeclaredPointcuts(Java15ReflectionBasedReferenceTypeDelegate.java:307) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.ReferenceType.getDeclaredPointcuts(ReferenceType.java:890) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:261) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType$PointcutGetter.get(ResolvedType.java:258) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4$1.hasNext(Iterators.java:213) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.Iterators$4.hasNext(Iterators.java:230) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.ResolvedType.findPointcut(ResolvedType.java:767) ~[aspectjweaver-1.9.20.jar:1.9.20]
-	at org.aspectj.weaver.patterns.ReferencePointcut.resolveBindings(ReferencePointcut.java:148) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.patterns.Pointcut.resolve(Pointcut.java:189) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.resolvePointcutExpression(PointcutParser.java:331) ~[aspectjweaver-1.9.20.jar:na]
-	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:312) ~[aspectjweaver-1.9.20.jar:na]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:222) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:193) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:172) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:288) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:320) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:366) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:318) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:434) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1773) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 36 common frames omitted
-
-2023-09-18T11:23:57.797+02:00  INFO 23548 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 23548 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:23:57.801+02:00  INFO 23548 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:23:58.852+02:00  INFO 23548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:23:58.975+02:00  INFO 23548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:23:59.914+02:00  INFO 23548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T11:23:59.926+02:00  INFO 23548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T11:23:59.926+02:00  INFO 23548 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T11:24:00.034+02:00  INFO 23548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T11:24:00.034+02:00  INFO 23548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2138 ms
-2023-09-18T11:24:00.258+02:00  INFO 23548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T11:24:00.322+02:00  INFO 23548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T11:24:00.325+02:00  INFO 23548 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T11:24:00.536+02:00  INFO 23548 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:24:00.757+02:00  INFO 23548 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T11:24:00.779+02:00  INFO 23548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T11:24:01.223+02:00  INFO 23548 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28831d69
-2023-09-18T11:24:01.225+02:00  INFO 23548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T11:24:01.714+02:00  INFO 23548 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:24:02.262+02:00  WARN 23548 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:02.269+02:00  WARN 23548 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T11:24:02.276+02:00  WARN 23548 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T11:24:02.434+02:00  INFO 23548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T11:24:02.438+02:00  INFO 23548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:24:02.890+02:00  INFO 23548 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T11:24:03.246+02:00  WARN 23548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T11:24:03.758+02:00  INFO 23548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T11:24:03.766+02:00  INFO 23548 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 6.674 seconds (process running for 7.195)
-2023-09-18T11:24:24.185+02:00  INFO 23548 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-18T11:24:24.185+02:00  INFO 23548 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-18T11:24:24.186+02:00  INFO 23548 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-18T11:24:24.223+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Constructor called: JpaProduct(int id, String name, double price)
-2023-09-18T11:24:24.227+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.l.ProductServiceAspectLogging      : Method test is called with arguments [Ljava.lang.Object;@49104cce
-2023-09-18T11:24:24.227+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Method setName() called
-2023-09-18T11:24:24.227+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.l.ProductServiceAspectLogging      : Method test has finished execution
-2023-09-18T11:24:24.228+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.l.ProductServiceAspectLogging      : Method getAll is called with arguments [Ljava.lang.Object;@e6df44d
-2023-09-18T11:24:24.377+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.390+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.391+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.392+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.392+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.392+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.392+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.392+02:00  WARN 23548 --- [http-nio-8080-exec-2] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:24:24.403+02:00  INFO 23548 --- [http-nio-8080-exec-2] d.t.g.l.ProductServiceAspectLogging      : Method getAll has finished execution
-2023-09-18T11:25:57.683+02:00  INFO 23548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:25:57.685+02:00  INFO 23548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T11:25:57.693+02:00  INFO 23548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-18T11:26:04.830+02:00  INFO 15532 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 15532 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:26:04.834+02:00  INFO 15532 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:26:05.722+02:00  INFO 15532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:26:05.810+02:00  INFO 15532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:26:06.642+02:00  INFO 15532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T11:26:06.659+02:00  INFO 15532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T11:26:06.660+02:00  INFO 15532 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T11:26:06.763+02:00  INFO 15532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T11:26:06.763+02:00  INFO 15532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1836 ms
-2023-09-18T11:26:06.969+02:00  INFO 15532 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T11:26:07.027+02:00  INFO 15532 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T11:26:07.029+02:00  INFO 15532 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T11:26:07.199+02:00  INFO 15532 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:26:07.357+02:00  INFO 15532 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T11:26:07.374+02:00  INFO 15532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T11:26:07.779+02:00  INFO 15532 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58739e5e
-2023-09-18T11:26:07.782+02:00  INFO 15532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T11:26:08.168+02:00  INFO 15532 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:26:08.712+02:00  WARN 15532 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:26:08.718+02:00  WARN 15532 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T11:26:08.724+02:00  WARN 15532 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T11:26:08.875+02:00  INFO 15532 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T11:26:08.878+02:00  INFO 15532 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:26:09.224+02:00  INFO 15532 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T11:26:09.495+02:00  WARN 15532 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T11:26:09.890+02:00  INFO 15532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T11:26:09.897+02:00  INFO 15532 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 5.773 seconds (process running for 6.245)
-2023-09-18T11:26:14.667+02:00  INFO 15532 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-18T11:26:14.668+02:00  INFO 15532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-18T11:26:14.669+02:00  INFO 15532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-18T11:26:14.701+02:00  INFO 15532 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Constructor called: JpaProduct(int id, String name, double price)
-2023-09-18T11:26:14.709+02:00  INFO 15532 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test is called with arguments JpaProduct{id=0, name='Test Name', price=100.0}
-2023-09-18T11:26:14.709+02:00  INFO 15532 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Method setName() called
-2023-09-18T11:26:14.709+02:00  INFO 15532 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test has finished execution
-2023-09-18T11:26:14.712+02:00 ERROR 15532 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0] with root cause
-
-java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at de.telran.g240123mbelesson331082023.logging_layer.ProductServiceAspectLogging.logBefore(ProductServiceAspectLogging.java:24) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:620) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.aspectj.AspectJMethodBeforeAdvice.before(AspectJMethodBeforeAdvice.java:44) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:57) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756) ~[spring-aop-6.0.11.jar:6.0.11]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-6.0.11.jar:6.0.11]
-	at de.telran.g240123mbelesson331082023.service.jpa.JpaProductService$$SpringCGLIB$$0.getAll(<generated>) ~[classes/:na]
-	at de.telran.g240123mbelesson331082023.controllers.ProductController.getAll(ProductController.java:25) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.12.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.11.jar:6.0.11]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.12.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
-	at java.base/java.lang.Thread.run(Thread.java:1623) ~[na:na]
-
-2023-09-18T11:30:24.781+02:00  INFO 15532 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:30:24.783+02:00  INFO 15532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T11:30:24.791+02:00  INFO 15532 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-18T11:30:31.787+02:00  INFO 14916 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 14916 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:30:31.789+02:00  INFO 14916 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:30:32.688+02:00  INFO 14916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:30:32.777+02:00  INFO 14916 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:30:33.603+02:00  INFO 14916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T11:30:33.613+02:00  INFO 14916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T11:30:33.613+02:00  INFO 14916 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T11:30:33.713+02:00  INFO 14916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T11:30:33.713+02:00  INFO 14916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1830 ms
-2023-09-18T11:30:33.929+02:00  INFO 14916 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T11:30:33.995+02:00  INFO 14916 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T11:30:33.997+02:00  INFO 14916 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T11:30:34.156+02:00  INFO 14916 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:30:34.319+02:00  INFO 14916 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T11:30:34.334+02:00  INFO 14916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T11:30:34.729+02:00  INFO 14916 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27d73d22
-2023-09-18T11:30:34.733+02:00  INFO 14916 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T11:30:35.122+02:00  INFO 14916 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:30:35.648+02:00  WARN 14916 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:35.656+02:00  WARN 14916 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T11:30:35.662+02:00  WARN 14916 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T11:30:35.817+02:00  INFO 14916 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T11:30:35.820+02:00  INFO 14916 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:30:36.165+02:00  INFO 14916 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T11:30:36.442+02:00  WARN 14916 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T11:30:36.802+02:00  INFO 14916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T11:30:36.811+02:00  INFO 14916 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 5.669 seconds (process running for 6.157)
-2023-09-18T11:30:49.260+02:00  INFO 14916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-18T11:30:49.261+02:00  INFO 14916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-18T11:30:49.263+02:00  INFO 14916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-18T11:30:49.298+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Constructor called: JpaProduct(int id, String name, double price)
-2023-09-18T11:30:49.304+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test is called with arguments JpaProduct{id=0, name='Test Name', price=100.0}
-2023-09-18T11:30:49.304+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Method setName() called
-2023-09-18T11:30:49.304+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test has finished execution
-2023-09-18T11:30:49.304+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method getAll is called with no arguments
-2023-09-18T11:30:49.417+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.424+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.425+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.425+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.425+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.425+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.426+02:00  WARN 14916 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:30:49.432+02:00  INFO 14916 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method getAll has finished execution
-2023-09-18T11:31:28.768+02:00  INFO 14916 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:31:28.769+02:00  INFO 14916 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T11:31:28.776+02:00  INFO 14916 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-18T11:33:08.553+02:00  INFO 22380 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 22380 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T11:33:08.556+02:00  INFO 22380 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T11:33:09.467+02:00  INFO 22380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T11:33:09.560+02:00  INFO 22380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
-2023-09-18T11:33:10.459+02:00  INFO 22380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T11:33:10.472+02:00  INFO 22380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T11:33:10.473+02:00  INFO 22380 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T11:33:10.575+02:00  INFO 22380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T11:33:10.575+02:00  INFO 22380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1922 ms
-2023-09-18T11:33:10.812+02:00  INFO 22380 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T11:33:10.905+02:00  INFO 22380 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T11:33:10.908+02:00  INFO 22380 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T11:33:11.101+02:00  INFO 22380 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:33:11.261+02:00  INFO 22380 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T11:33:11.279+02:00  INFO 22380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T11:33:11.699+02:00  INFO 22380 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ad6ae45
-2023-09-18T11:33:11.701+02:00  INFO 22380 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T11:33:12.105+02:00  INFO 22380 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T11:33:12.640+02:00  WARN 22380 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T11:33:12.648+02:00  WARN 22380 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T11:33:12.653+02:00  WARN 22380 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T11:33:12.821+02:00  INFO 22380 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T11:33:12.824+02:00  INFO 22380 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:33:13.174+02:00  INFO 22380 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T11:33:13.474+02:00  WARN 22380 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T11:33:13.873+02:00  INFO 22380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T11:33:13.882+02:00  INFO 22380 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 5.987 seconds (process running for 6.497)
-2023-09-18T11:33:17.311+02:00  INFO 22380 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T11:33:17.314+02:00  INFO 22380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T11:33:17.322+02:00  INFO 22380 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-09-18T12:08:44.629+02:00  INFO 23400 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 23400 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
-2023-09-18T12:08:44.635+02:00  INFO 23400 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
-2023-09-18T12:08:45.585+02:00  INFO 23400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-18T12:08:45.672+02:00  INFO 23400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 3 JPA repository interfaces.
-2023-09-18T12:08:46.575+02:00  INFO 23400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-18T12:08:46.587+02:00  INFO 23400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-18T12:08:46.588+02:00  INFO 23400 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
-2023-09-18T12:08:46.683+02:00  INFO 23400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-18T12:08:46.684+02:00  INFO 23400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1948 ms
-2023-09-18T12:08:46.914+02:00  INFO 23400 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-18T12:08:46.973+02:00  INFO 23400 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
-2023-09-18T12:08:46.976+02:00  INFO 23400 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-18T12:08:47.138+02:00  INFO 23400 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T12:08:47.301+02:00  INFO 23400 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-18T12:08:47.316+02:00  INFO 23400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-18T12:08:47.728+02:00  INFO 23400 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3321291a
-2023-09-18T12:08:47.730+02:00  INFO 23400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-18T12:08:48.152+02:00  INFO 23400 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-18T12:08:48.680+02:00  WARN 23400 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:08:48.687+02:00  WARN 23400 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
-2023-09-18T12:08:48.693+02:00  WARN 23400 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
-2023-09-18T12:08:48.860+02:00  INFO 23400 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-18T12:08:48.863+02:00  INFO 23400 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T12:08:49.199+02:00  INFO 23400 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-09-18T12:08:49.550+02:00  WARN 23400 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-18T12:08:49.953+02:00  INFO 23400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-18T12:08:49.962+02:00  INFO 23400 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 5.994 seconds (process running for 6.473)
-2023-09-18T12:08:59.927+02:00  INFO 23400 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-18T12:08:59.928+02:00  INFO 23400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-09-18T12:08:59.929+02:00  INFO 23400 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-09-18T12:08:59.967+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Constructor called: JpaProduct(int id, String name, double price)
-2023-09-18T12:08:59.973+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method test of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService is called with arguments JpaProduct{id=0, name='Test Name', price=100.0}
-2023-09-18T12:08:59.974+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.logging_layer.AspectLogging        : Method test of JpaProductService class was called with parameter - JpaProduct{id=0, name='Test Name', price=100.0}
-2023-09-18T12:08:59.975+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test is called with arguments JpaProduct{id=0, name='Test Name', price=100.0}
-2023-09-18T12:08:59.975+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Method setName() called
-2023-09-18T12:08:59.975+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method test has finished execution
-2023-09-18T12:08:59.975+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.logging_layer.AspectLogging        : Method test of JpaProductService class was finished, object - JpaProduct{id=0, name='New name', price=100.0}
-2023-09-18T12:08:59.977+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method test of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService successfully returned null
-2023-09-18T12:08:59.977+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method test of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService has finished execution
-2023-09-18T12:08:59.977+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method getAll of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService is called with no arguments
-2023-09-18T12:08:59.977+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method getAll is called with no arguments
-2023-09-18T12:09:00.116+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.128+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.129+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.129+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.129+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.130+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.130+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.130+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.130+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.130+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.131+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.131+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.131+02:00  WARN 23400 --- [http-nio-8080-exec-1] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
-2023-09-18T12:09:00.142+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.ProductServiceAspectLogging      : Method getAll has finished execution
-2023-09-18T12:09:00.143+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method getAll of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService successfully returned [JpaProduct{id=1, name='Banana', price=150.0}, JpaProduct{id=2, name='Apple', price=120.0}, JpaProduct{id=3, name='Orange', price=210.0}, JpaProduct{id=4, name='Peach', price=190.0}, JpaProduct{id=5, name='Lemon', price=170.0}, JpaProduct{id=8, name='Strawberry', price=1000.0}, JpaProduct{id=9, name='Pomelo', price=100.0}, JpaProduct{id=14, name='Testprod', price=1555.0}, JpaProduct{id=15, name='a', price=-500.0}, JpaProduct{id=16, name='Potato', price=90.0}, JpaProduct{id=17, name='Pot', price=90.0}, JpaProduct{id=18, name='Potato', price=999999.0}, JpaProduct{id=19, name='Coconut', price=290.0}]
-2023-09-18T12:09:00.144+02:00  INFO 23400 --- [http-nio-8080-exec-1] d.t.g.l.AllServicesAspectLogging         : Method getAll of class de.telran.g240123mbelesson331082023.service.jpa.JpaProductService has finished execution
-2023-09-18T12:13:42.271+02:00  INFO 23400 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-09-18T12:13:42.273+02:00  INFO 23400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-09-18T12:13:42.284+02:00  INFO 23400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20T13:37:33.849+02:00  INFO 7956 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 7956 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
+2023-09-20T13:37:33.858+02:00  INFO 7956 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T13:37:35.002+02:00  INFO 7956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20T13:37:35.100+02:00  INFO 7956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 4 JPA repository interfaces.
+2023-09-20T13:37:36.295+02:00  INFO 7956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T13:37:36.312+02:00  INFO 7956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T13:37:36.313+02:00  INFO 7956 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T13:37:36.423+02:00  INFO 7956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T13:37:36.423+02:00  INFO 7956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2477 ms
+2023-09-20T13:37:36.720+02:00  INFO 7956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20T13:37:36.836+02:00  INFO 7956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-20T13:37:36.839+02:00  INFO 7956 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-20T13:37:37.079+02:00  INFO 7956 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:37:37.274+02:00  INFO 7956 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-20T13:37:37.304+02:00  INFO 7956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20T13:37:37.831+02:00  INFO 7956 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ad896f7
+2023-09-20T13:37:37.833+02:00  INFO 7956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20T13:37:38.340+02:00  INFO 7956 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:37:38.994+02:00  WARN 7956 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
+2023-09-20T13:37:39.002+02:00  WARN 7956 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
+2023-09-20T13:37:39.008+02:00  WARN 7956 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
+2023-09-20T13:37:39.179+02:00  INFO 7956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20T13:37:39.183+02:00  INFO 7956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:37:39.599+02:00  INFO 7956 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-09-20T13:37:40.047+02:00  WARN 7956 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20T13:37:40.556+02:00  INFO 7956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-20T13:37:40.567+02:00  INFO 7956 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 7.448 seconds (process running for 8.095)
+2023-09-20T13:38:25.287+02:00  INFO 7956 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:38:25.289+02:00  INFO 7956 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20T13:38:25.300+02:00  INFO 7956 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20T13:38:48.567+02:00  INFO 20760 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 20760 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
+2023-09-20T13:38:48.570+02:00  INFO 20760 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T13:38:49.530+02:00  INFO 20760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20T13:38:49.629+02:00  INFO 20760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 4 JPA repository interfaces.
+2023-09-20T13:38:50.847+02:00  INFO 20760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T13:38:50.864+02:00  INFO 20760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T13:38:50.865+02:00  INFO 20760 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T13:38:51.025+02:00  INFO 20760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T13:38:51.026+02:00  INFO 20760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2388 ms
+2023-09-20T13:38:51.362+02:00  INFO 20760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20T13:38:51.465+02:00  INFO 20760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-20T13:38:51.471+02:00  INFO 20760 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-20T13:38:51.766+02:00  INFO 20760 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:38:51.970+02:00  INFO 20760 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-20T13:38:52.010+02:00  INFO 20760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20T13:38:52.630+02:00  INFO 20760 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37cfda1c
+2023-09-20T13:38:52.633+02:00  INFO 20760 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20T13:38:53.116+02:00  INFO 20760 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:38:53.736+02:00  WARN 20760 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
+2023-09-20T13:38:53.745+02:00  WARN 20760 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
+2023-09-20T13:38:53.749+02:00  WARN 20760 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
+2023-09-20T13:38:53.910+02:00  INFO 20760 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20T13:38:53.913+02:00  INFO 20760 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:38:54.337+02:00  INFO 20760 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-09-20T13:38:54.761+02:00  WARN 20760 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20T13:38:55.246+02:00  INFO 20760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-20T13:38:55.259+02:00  INFO 20760 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 7.379 seconds (process running for 7.872)
+2023-09-20T13:39:37.231+02:00  INFO 20760 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:39:37.233+02:00  INFO 20760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20T13:39:37.240+02:00  INFO 20760 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-20T13:42:06.424+02:00  INFO 15400 --- [main] t.g.G240123MBeLesson331082023Application : Starting G240123MBeLesson331082023Application using Java 20.0.1 with PID 15400 (C:\java\repositories\lesson3\target\classes started by nadze in C:\java\repositories\lesson3)
+2023-09-20T13:42:06.427+02:00  INFO 15400 --- [main] t.g.G240123MBeLesson331082023Application : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T13:42:07.427+02:00  INFO 15400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-20T13:42:07.513+02:00  INFO 15400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+2023-09-20T13:42:08.400+02:00  INFO 15400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T13:42:08.412+02:00  INFO 15400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T13:42:08.412+02:00  INFO 15400 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T13:42:08.544+02:00  INFO 15400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T13:42:08.545+02:00  INFO 15400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2044 ms
+2023-09-20T13:42:08.809+02:00  INFO 15400 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-20T13:42:08.878+02:00  INFO 15400 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-20T13:42:08.881+02:00  INFO 15400 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-20T13:42:09.070+02:00  INFO 15400 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:42:09.216+02:00  INFO 15400 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-20T13:42:09.233+02:00  INFO 15400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-20T13:42:09.633+02:00  INFO 15400 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b3518e1
+2023-09-20T13:42:09.635+02:00  INFO 15400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-20T13:42:10.038+02:00  INFO 15400 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-20T13:42:10.625+02:00  WARN 15400 --- [main] d.t.g.domain.entity.jpa.JpaProduct       : Default constructor called: JpaProduct()
+2023-09-20T13:42:10.634+02:00  WARN 15400 --- [main] d.t.g.domain.entity.jpa.JpaCustomer      : Default constructor called: JpaCustomer()
+2023-09-20T13:42:10.638+02:00  WARN 15400 --- [main] d.t.g.domain.entity.jpa.JpaCart          : Default constructor called: JpaCart()
+2023-09-20T13:42:10.788+02:00  INFO 15400 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-20T13:42:10.791+02:00  INFO 15400 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:42:11.143+02:00  INFO 15400 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-09-20T13:42:11.506+02:00  WARN 15400 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-20T13:42:11.913+02:00  INFO 15400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-20T13:42:11.927+02:00  INFO 15400 --- [main] t.g.G240123MBeLesson331082023Application : Started G240123MBeLesson331082023Application in 6.099 seconds (process running for 6.954)
+2023-09-20T13:42:15.127+02:00  INFO 15400 --- [scheduling-1] d.t.g.schedule_layer.ScheduleExecutor    : Last added product: Coconut
+2023-09-20T13:42:45.003+02:00  INFO 15400 --- [scheduling-1] d.t.g.schedule_layer.ScheduleExecutor    : Last added product: Coconut
+2023-09-20T13:42:49.910+02:00  INFO 15400 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-20T13:42:49.912+02:00  INFO 15400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-20T13:42:49.920+02:00  INFO 15400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
