@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController implements Controller {
     @Autowired
-    private ProductService productService;
+    private JpaProductService productService;
 
     @GetMapping
     public List<Product> getAll() {
@@ -72,5 +72,13 @@ public class ProductController implements Controller {
     @GetMapping("/avgPrice")
     public double getAveragePrice() {
         return productService.getAveragePrice();
+    }
+
+    @PutMapping("/update/{id}")
+    public Product update(@PathVariable int id, @RequestBody JpaProduct product) {
+        if (!(product.getId() == id)) {
+            throw new IllegalArgumentException("Product ID and request body must much");
+        }
+        return productService.updateOrSaveProduct(product);
     }
 }

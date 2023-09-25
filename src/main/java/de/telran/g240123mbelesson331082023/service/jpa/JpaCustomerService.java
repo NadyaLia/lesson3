@@ -5,6 +5,7 @@ import de.telran.g240123mbelesson331082023.domain.entity.Customer;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaCart;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaCustomer;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaProduct;
+import de.telran.g240123mbelesson331082023.domain.entity.jpa.Role;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaCartRepository;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaCustomerRepository;
 import de.telran.g240123mbelesson331082023.repository.jpa.JpaProductRepository;
@@ -13,14 +14,16 @@ import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 @Service
-public class JpaCustomerService implements CustomerService {
+public class JpaCustomerService implements CustomerService, UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(JpaCustomerService.class);
 
     @Autowired
@@ -29,6 +32,9 @@ public class JpaCustomerService implements CustomerService {
     private JpaCartRepository cartRepository;
     @Autowired
     private JpaProductRepository productRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     @Override
     public List<Customer> getAll() {
@@ -106,5 +112,34 @@ public class JpaCustomerService implements CustomerService {
     @Override
     public void clearCart(int customerId) {
         repository.clearCart(customerId);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        Customer customer = repository.findByName(name);
+        if (customer == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
+        return (UserDetails) customer;
+    }
+
+    @Transactional
+    public Customer updateOrSaveCustomer(JpaCustomer customer) {
+        Optional<JpaCustomer> foundCustomer = repository.findById(customer.getId());
+        if (foundCustomer != null) {
+            JpaCustomer updatedCustomer = foundCustomer.get();
+            updatedCustomer.setName(customer.getName());
+            updatedCustomer.setAge(customer.getAge());
+            updatedCustomer.setEmail(customer.getUsername());
+            return repository.save(updatedCustomer);
+        }
+
+        Set<Role> roles = new HashSet<>();
+        roles.add(new Role(1, "ROLE_USER"));
+        customer.setRoles(roles);
+
+        String encodedPassword = encoder.encode(customer.getPassword());
+        customer.setPassword(encodedPassword);
+        return repository.save(customer);
     }
 }

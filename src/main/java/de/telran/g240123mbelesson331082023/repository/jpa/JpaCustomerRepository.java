@@ -1,5 +1,6 @@
 package de.telran.g240123mbelesson331082023.repository.jpa;
 
+import de.telran.g240123mbelesson331082023.domain.entity.Customer;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaCustomer;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -30,4 +31,6 @@ public interface JpaCustomerRepository extends JpaRepository<JpaCustomer, Intege
             "INNER JOIN cart ON cart.id = cart_product.cart_id " +
             "WHERE cart.customer_id = ?1", nativeQuery = true)
     void clearCart(int customerId);
+
+    Customer findByName(String name);
 }

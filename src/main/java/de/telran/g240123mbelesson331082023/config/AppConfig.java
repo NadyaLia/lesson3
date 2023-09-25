@@ -1,5 +1,6 @@
 package de.telran.g240123mbelesson331082023.config;
 
+/*
 import de.telran.g240123mbelesson331082023.domain.database.CommonDatabase;
 import de.telran.g240123mbelesson331082023.domain.database.Database;
 import de.telran.g240123mbelesson331082023.repository.*;
@@ -19,15 +20,15 @@ public class AppConfig {
         return new CommonDatabase();
     }
 
-    /*@Bean
+    @Bean
     public CustomerService customerService() {
         return new CommonCustomerService();
-    }*/
+    }
 
-    /*@Bean
+    @Bean
     public ProductService productService() {
         return new CommonProductService();
-    }*/
+    }
 
     @Bean
     public ProductRepository productRepository() {
@@ -39,3 +40,4 @@ public class AppConfig {
         return new MySqlCustomerRepository();
     }
 }
+*/

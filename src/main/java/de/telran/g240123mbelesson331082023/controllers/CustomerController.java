@@ -1,14 +1,18 @@
 package de.telran.g240123mbelesson331082023.controllers;
 
+import de.telran.g240123mbelesson331082023.domain.entity.Product;
 import de.telran.g240123mbelesson331082023.domain.entity.common.CommonCustomer;
 import de.telran.g240123mbelesson331082023.domain.entity.Customer;
 import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaCustomer;
+import de.telran.g240123mbelesson331082023.domain.entity.jpa.JpaProduct;
 import de.telran.g240123mbelesson331082023.exception_layer.exceptions.CartIsEmptyException;
 import de.telran.g240123mbelesson331082023.exception_layer.exceptions.CustomerNotFoundException;
 import de.telran.g240123mbelesson331082023.exception_layer.exceptions.EntityValidationException;
 import de.telran.g240123mbelesson331082023.service.CustomerService;
+import de.telran.g240123mbelesson331082023.service.jpa.JpaCustomerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +21,10 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController implements Controller {
     @Autowired
-    private CustomerService customerService;
+    private JpaCustomerService customerService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 
     @GetMapping
     public List<Customer> getAll() {
@@ -86,5 +93,13 @@ public class CustomerController implements Controller {
     @DeleteMapping("/cart/clear/{customerId}")
     public void clearCart(@PathVariable int customerId) {
         customerService.clearCart(customerId);
+    }
+
+    @PutMapping("/update/{id}")
+    public Customer update(@PathVariable int id, @RequestBody JpaCustomer customer) {
+        if (!(customer.getId() == id)) {
+            throw new IllegalArgumentException("Customer ID and request body must much");
+        }
+        return customerService.updateOrSaveCustomer(customer);
     }
 }

@@ -72,4 +72,12 @@ public class JpaProduct implements Product {
         logger.info("Method setName() called");
         this.name = name;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
